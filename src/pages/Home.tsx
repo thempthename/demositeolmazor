@@ -1,43 +1,129 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
-const [formData, setFormData] = useState({
-  name: "",
-  email: "",
-  message: "",
-});
+// const [formData, setFormData] = useState({
+//   name: "",
+//   email: "",
+//   message: "",
+// });
 
-const [status, setStatus] = useState("");
+// const [status, setStatus] = useState("");
 
-const handleChange = (
-  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-) => {
-  setFormData({
-    ...formData,
-    [e.target.name]: e.target.value,
+// const handleChange = (
+//   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+// ) => {
+//   setFormData({
+//     ...formData,
+//     [e.target.name]: e.target.value,
+//   });
+// };
+// const handleSubmit = (e: React.FormEvent) => {
+//   e.preventDefault();
+
+//   emailjs
+//     .send(
+//       "service_c586ps6", // Replace with your EmailJS service ID
+//       "template_z9678s3", // Replace with your EmailJS template ID
+//       formData,
+//       "vb8wtEqf4g2jpdakK" // Replace with your EmailJS public key
+//     )
+//     .then(
+//       (response) => {
+//         console.log("SUCCESS!", response.status, response.text);
+//         setStatus("Message sent successfully!");
+//         setFormData({ name: "", email: "", message: "" }); // Clear form
+//       },
+//       (err) => {
+//         console.error("FAILED...", err);
+//         setStatus("Failed to send message. Please try again.");
+//       }
+//     );
+// };
+
+const ContactForm = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
   });
-};
-const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
 
-  emailjs
-    .send(
-      "service_c586ps6", // Replace with your EmailJS service ID
-      "template_z9678s3", // Replace with your EmailJS template ID
-      formData,
-      "vb8wtEqf4g2jpdakK" // Replace with your EmailJS public key
-    )
-    .then(
-      (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // Clear form
-      },
-      (err) => {
-        console.error("FAILED...", err);
-        setStatus("Failed to send message. Please try again.");
-      }
-    );
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Normally, you would send the form data to a server, but for this example, we'll just log it.
+    console.log("Form submitted:", form);
+    alert("Thank you for your message!");
+    setForm({ name: "", email: "", message: "" }); // Clear the form after submission
+  };
+
+  return (
+    <div
+      id="contact"
+      className="bg-highlight p-8 rounded-lg shadow-lg max-w-3xl mx-auto mt-10"
+    >
+      <h2 className="text-3xl font-semibold text-center text-primary mb-6">
+        Contact Us
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div>
+          <label htmlFor="name" className="block text-primary  font-medium">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={form.name}
+            onChange={handleInputChange}
+            className="w-full p-3 border border-gray-300 rounded-lg text-accent"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-primary font-medium">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={form.email}
+            onChange={handleInputChange}
+            className="w-full p-3 border border-gray-300 rounded-lg text-accent "
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="message" className="block text-primary font-medium">
+            Message
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            value={form.message}
+            onChange={handleInputChange}
+            rows={4}
+            className="w-full p-3 border border-gray-300 rounded-lg text-accent"
+            required
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-accent text-white py-3 rounded-lg font-semibold hover:bg-violet-600 transition"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  );
 };
 
 const cardData = [
@@ -233,9 +319,12 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <ContactForm />
+      <br />
+      <br />
 
       {/* Contact Section */}
-      <div className="bg-secondary py-20">
+      {/* <div className="bg-secondary py-20">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-highlight text-center mb-6">
             Get in Touch
@@ -277,7 +366,7 @@ const Home = () => {
             {status && <p className="text-center text-accent mt-4">{status}</p>}
           </form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

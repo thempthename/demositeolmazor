@@ -23,7 +23,7 @@ const FamilyOfSchool = () => {
   ];
 
   return (
-    <div className="bg-secondary py-10">
+    <div className="bg-secondary py-10 min-h-screen">
       <div className="container mx-auto">
         <h1 className="text-3xl font-bold text-highlight text-center mb-8">
           Meet Our Team

@@ -3,8 +3,14 @@ const ImagesAndVideos = () => {
     { src: "/images/public.jpg", alt: "Robotics Club" },
     { src: "/images/science-lab.jpg", alt: "Science Lab" },
     { src: "/images/art-gallery.jpg", alt: "Art Gallery" },
-    { src: "/images/sports-day.jpg", alt: "Sports Day" },
+    { src: "/images/pic1.jpg", alt: "Pic1" },
+    { src: "/images/pic2.jpg", alt: "Pic2" },
+    { src: "/images/pic6.jpg", alt: "Pic6" },
+    { src: "/images/pic3.jpg", alt: "Pic3" },
     { src: "/images/cultural-event.jpg", alt: "Cultural Event" },
+    { src: "/images/sports-day.jpg", alt: "Sports Day" },
+    { src: "/images/pic4.jpg", alt: "Pic4" },
+    { src: "/images/pic5.jpg", alt: "Pic5" },
   ];
 
   return (
