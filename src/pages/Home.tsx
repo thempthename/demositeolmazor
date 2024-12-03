@@ -131,38 +131,38 @@ const cardData = [
     id: 1,
     title: "Robotics Club",
     description: "Explore how our students build innovative robots.",
-    image: "/images/public.jpg",
+    image: "/images/public-min.jpg",
   },
   {
     id: 2,
     title: "Science Lab",
     description: "Dive into exciting experiments and discoveries.",
-    image: "/images/science-lab.jpg",
+    image: "/images/science-lab-min.jpg",
   },
   {
     id: 3,
     title: "Art Gallery",
     description: "Witness stunning artworks by our talented students.",
-    image: "/images/art-gallery.jpg",
+    image: "/images/art-gallery-min.jpg",
   },
   {
     id: 4,
     title: "Sports Achievements",
     description: "Celebrate our victories in various sports events.",
-    image: "/images/sports-day.jpg",
+    image: "/images/sports-day-min.jpg",
   },
   {
     id: 5,
     title: "Cultural Events",
     description: "Relive moments from our vibrant cultural festivals.",
-    image: "/images/cultural-event.jpg",
+    image: "/images/cultural-event-min.jpg",
   },
   {
     id: 6,
     title: "Technology Showcase",
     description:
       "Experience the latest technological advancements at our campus.",
-    image: "/images/technology-showcase.jpg",
+    image: "/images/technology-showcase-min.jpg",
   },
 ];
 
